@@ -5,7 +5,7 @@
   --color-text-second: #fff;
   --color-nav: #3a497b;
   --second-color: #32383e;
-  --main-font:"Comfortaa"
+  --main-font:"Comfortaa", sans-serif;
 
 }
 .bg-main-color {
