@@ -65,6 +65,9 @@ header img {
 .navbar div img.logo {
   max-width: 40px;
 }
+#searchInput:focus {
+outline: none;
+}
 
 /* start of home section */
 main section h3,

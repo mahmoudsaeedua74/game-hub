@@ -70,5 +70,3 @@ export class Ui {
   }
 
 }
-
-//minimum_system_requirements

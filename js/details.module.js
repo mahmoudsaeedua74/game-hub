@@ -10,7 +10,6 @@ export class Details {
             this.game.classList.replace("d-none", "d-block")
             this.details.classList.replace("d-block", "d-none")
         })
-
         this.ui = new Ui()
     }
     async getApiId(gameId) {

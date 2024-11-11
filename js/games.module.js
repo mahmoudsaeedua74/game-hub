@@ -5,7 +5,7 @@ import { Ui } from "./ui.module.js"
 export class Games {
     constructor() {
         //ues Jquery for class active 
-        let buttonAncor = $("a.nav-link")
+        const buttonAncor = $("a.nav-link")
         buttonAncor.click(e => {
             buttonAncor.removeClass("active")
             $(e.target).addClass("active")
@@ -21,12 +21,21 @@ export class Games {
         this.ui = new Ui()
         // give get game some category for when i open the page its will be there are some data for display
         this.getGames("mmorpg")
-
+        //select input and add event 
+        this.searchInput = document.getElementById("searchInput");
+        this.searchInput.addEventListener("input", (e) => this.handleSearch(e));
+    }
+    
+    handleSearch(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredGames = this.gamesData.filter(game =>
+            game.title.toLowerCase().includes(searchTerm)
+        );
+        this.ui.displayGame(filteredGames); // display game after fillter
+        this.displayGameDetils()
     }
     // // for loading page
     async getGames(category) {
-        // const loading = document.querySelector(".loading");
-        // loading.classList.remove("d-none");
         $(".loading").fadeIn();
         //that function for fetch data ad take promter from constructor its a category for change api 
         const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${category}`;
@@ -35,6 +44,7 @@ export class Games {
         try {
             const response = await fetch(url, options);
             const result = await response.json();
+            this.gamesData = result;
             //give  displayGame  a api for display data
             this.ui.displayGame(result);
             this.displayGameDetils()
@@ -54,7 +64,7 @@ export class Games {
             card.addEventListener("click", e => {
                 this.game.classList.replace("d-block", "d-none")
                 this.details.classList.replace("d-none", "d-block")
-                let data = new Details()
+                const data = new Details()
                 const gameId = card.dataset.id
                 data.getApiId(gameId)
             })
