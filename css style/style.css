@@ -5,6 +5,7 @@
   --color-text-second: #fff;
   --color-nav: #3a497b;
   --second-color: #32383e;
+  --main-font:"Comfortaa"
 
 }
 .bg-main-color {
@@ -26,7 +27,7 @@
 }
 
 body {
-  font-family: "Comfortaa", cursive;
+  font-family:var(--main-font);
   min-height: 100%;
   min-width: 100%;
   background-color: var(--main-color);
@@ -46,7 +47,7 @@ header img {
   margin-top: -30px;
 }
 .navbar h5 {
-  font-family:  "Nerko One" ,cursive;
+  font-family:var(--main-font);
   font-size: 20px;
 }
 .navbar ul li a {
@@ -99,8 +100,7 @@ main section span {
 
 /* start of Details  section */
 section.details h1 {
-  font-family: "Nerko One" ,cursive;
-  font-size: 27.5px;
+  font-family:var(--main-font);  font-size: 27.5px;
 }
 .btn-close:focus {
   outline: none;
