@@ -46,7 +46,7 @@ header img {
   margin-top: -30px;
 }
 .navbar h5 {
-  font-family: cursive, "Nerko One";
+  font-family:  "Nerko One" ,cursive;
   font-size: 20px;
 }
 .navbar ul li a {
@@ -99,7 +99,7 @@ main section span {
 
 /* start of Details  section */
 section.details h1 {
-  font-family: cursive;
+  font-family: "Nerko One" ,cursive;
   font-size: 27.5px;
 }
 .btn-close:focus {
